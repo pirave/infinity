@@ -73,7 +73,7 @@ We are team $\infty$.
   \end{center}
   \vspace{-20pt}
 \end{wrapfigure}
-Nicholas Dujay is a 3rd year undergraduate computer science student at the University of Toronto Scarborough Campus. He transferred from Carleton University, where he was studying to become an electrical engineer, but he decided to pursue his passion in computers and study at the University of Toronto. He is interested in learning agile, extreme programming and the software development process so he can have an idea of how software development happens in a real business setting. He is hoping to enter the video game industry after graduation, so this class will help him have an idea of how to work in a team. He spent a couple months developing a game during the summer of 2013, but had to stop development because of school. He has travelled to many places in North America, including Montreal, Moncton, New York, and Cancún. In his spare time, he enjoys watching television shows such as Breaking Bad.\\
+Nicholas Dujay is a 3rd year undergraduate computer science student at the University of Toronto Scarborough Campus. He transferred from Carleton University, where he was studying to become an electrical engineer, but he decided to pursue his passion in computers and study at the University of Toronto. He is interested in learning agile, extreme programming and the software development process so he can have an idea of how software development happens in a real business setting. He is hoping to enter the video game industry after graduation, so this class will help him have an idea of how to work in a team. He spent a couple months developing a game during the summer of 2013, but had to stop development because of school. He has travelled to many places in North America, including Montreal, Moncton, New York, and Canc?n. In his spare time, he enjoys watching television shows such as Breaking Bad.\\
 
 
 \begin{wrapfigure}{l}{0.25\textwidth}
@@ -173,7 +173,15 @@ In addition, matplotlib is cross-platform compatible and can be embedded within 
 
 \section{Reverse Engineering Tools}
 
+Our group decided to find a suitable reverse engineering tool to aid us in generating a UML class diagram that represents all the classes, subclass relationships, and associations in the source code. We initially took a look at various applications that would provide us with the nessecary tools to generate diagrams from the matplotlib source code. Some of these applications included visual paradigm, pywebuml, pyreverse, etc. After listing and analyzing some of the pros and cons of each application, we unanimously agreed on using a software called Enterprise Archeticture by Sparx Systems (Sparx). 
+
+Many of the applications offered us a way to input our matplotlib source code and return a UML class diagram representing all the relationships within it. However since we still needed to edit the generated model to capture information missed by the tool, and remove unnecessary details, we found Sparx provided us a way to do this with ease.
+
+
 \section{Abstraction Steps}
+
+After generating our intial model from the raw source code, we all took a step back to understand the relationships and associations between different components. After briefly inspecting the overall model in totality, we strategically divided it up into parts for each team member to modify. For example, 
+
 
 %xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 %xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
