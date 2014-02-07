@@ -277,7 +277,7 @@ The Artist Layer contains one of matlplotlib's core abstract classes, the Artist
 \begin{figure}[ht!]
         \centering
                 \includegraphics[width=0.3\textwidth]{img/examples/simple_plot}
-        \caption{Hierarchy of the artist instances used to draw Figure~\ref{fig:artistExAgg}}\label{fig:artistEx}
+        \caption{A simple sine graph}\label{fig:artistEx}
 \end{figure}
 
 We must first divide the abstract Artist into two separate categories, primitive and composite. The primitive artists are standalone instances of artists like Text, Line2D (sine line), shapes, etc. A composite artist is one that holds a multitude of primitive and other composite artist instances. The first instance created is the Figure instance, a composite artist which contains one of matplotlib's major composite artists, the Axes. The Axes encapsulates all the artist instances that follow, including the Title, Axes, Labels, Ticks, etc. Fig~\ref{fig:artistExAgg} shows a partitioning hierarchy of Figure~\ref{fig:artistEx} was created.
@@ -285,7 +285,7 @@ We must first divide the abstract Artist into two separate categories, primitive
 \begin{figure}[ht!]
         \centering
                 \includegraphics[width=0.5\textwidth]{img/umls/arch/artistExAgg}
-        \caption{3-Tiered Architecture of matlplotlib}\label{fig:artistExAgg}
+        \caption{Hierarchy of the artist instances used to draw Figure~\ref{fig:artistEx}}\label{fig:artistExAgg}
 \end{figure}
 
 We know the coupling between the Artist Layer and the Backend Layer happens via the Artist and Renderer instances. Specifically, the draw method inside artist must call a suitable method from the Renderer's API (e.g. draw\_path, draw\_image, and draw\_text). Below is the abstract draw method from the abstract Artist class.
