@@ -214,7 +214,7 @@ After listing and analyzing some of the pros and cons of each application, we un
 
 After generating our initial model from the raw source code, we split up the diagram into even parts that we could all simplify and understand. This allowed us to work in parallel which is helpful when tackling such a large codebase. We were supposed to identify important modules and relationships while simplifying the models so that we could get a better understanding of the higher abstractions of the system. Because Enterprise Architect has a very clear tree model, it helped us quickly identify important abstractions, as they were often parents of a large tree.
 
-Reflecting back on this though, it was perhaps not the best method. Because we each only had a small part of the whole library, none of us could get a great overview of the whole system. While it was still somewhat effective, because each of us only knew a small portion of classes we couldn?t visualize the proper relationships between major classes. 
+Reflecting back on this though, it was perhaps not the best method. Because we each only had a small part of the whole library, none of us could get a great overview of the whole system. While it was still somewhat effective, because each of us only knew a small portion of classes we couldn't visualize the proper relationships between major classes. 
 
 What eventually ended up really helping us get a proper high level picture of matplotlib was the Architecture of Open Source Applications article (\url{http://aosabook.org/en/matplotlib.html}) written by the founder of matplotlib John Hunter. Once we read through that document we gained a much better understanding of the general architecture of matplotlib and the motivations behind certain design decisions. After also looking at the matplotlib docs (\url{http://matplotlib.org/contents.html}) and checking the matplotlib init.py file to see the bigger picture we were much more easily able to identify important components and relationships. In hindsight, it would have been better if we could have gotten a good overview first, and then split up the uml. It would have allowed us to split up the diagram more effectively and keep relevant classes and relationships together.
 
@@ -515,7 +515,7 @@ Mathtext is a module for parsing a subset of the TeX math syntax and drawing the
 
 
 \subsection{Colours \& CM}
-Colors is a module for converting numbers or color arguments to *RGB* or *RGBA*, while cm (colormap) is a baseclass for all scalar to RGBA mappings (see Figure~\ref{fig:cm}).
+Colors is a module for converting numbers or color arguments to *RGB* or *RGBA*, while cm (colormap) is a baseclass for all scalar to RGBA mappings (see Figure~\ref{fig:cm} and Figure~\ref{fig:cm_e}).
 
 \begin{figure}[ht!]
         \centering
@@ -526,89 +526,91 @@ Colors is a module for converting numbers or color arguments to *RGB* or *RGBA*,
 \begin{figure}[ht!]
         \centering
                 \includegraphics[width=0.3\textwidth]{img/umls/kevin/griddata}
-        \caption{Example of colormap mapping data values to colours}\label{fig:artistExAgg}
+        \caption{Example of colormap mapping data values to colours}\label{fig:cm_e}
 \end{figure}
 
 %S6--------------------------------------------------------------------------------------
 \subsection{Annotation}
 
+Part of the Artist abstract class, creates annotation objects on arbitrary positions on the plot, figureCanvas (see Figure~\ref{fig:ann}).
+
 \begin{figure}[ht!]
         \centering
                 \includegraphics[width=0.4\textwidth]{img/umls/derek/annotation}
-        \caption{The Text class and the Annotation classes}\label{fig:artistExAgg}
+        \caption{The Text class and the Annotation classes}\label{fig:ann}
 \end{figure}
 
 \subsection{Patches}
-Created by Composite Artists, Patches and its primitive artist subclasses creates patches of colour used as graphical elements that make up the plot background.
+Created by Composite Artists, Patches and its primitive artist subclasses creates patches of colour used as graphical elements that make up the plot background (see Figure~\ref{fig:patch}).
 \begin{figure}[ht!]
         \centering
                 \includegraphics[width=\textwidth]{img/umls/derek/patch}
-        \caption{The Patch class and many of its subclasses}\label{fig:artistExAgg}
+        \caption{The Patch class and many of its subclasses}\label{fig:patch}
 \end{figure}
 
 %S7--------------------------------------------------------------------------------------
 \subsection{Artist}
 
-The Artist class is an abstract class that is used to implement classes which is then used to display on the figureCanvas. These classes include Table, Line2D, Figure, Text, Legend etc?
+The Artist class is an abstract class that is used to implement classes which is then used to display on the figureCanvas. These classes include Table, Line2D, Figure, Text, Legend etc? (see Figure~\ref{fig:artist}).
 
 \begin{figure}[ht!]
         \centering
                 \includegraphics[width=0.5\textwidth]{img/umls/dave/artist}
-        \caption{The Artist class and many of its subclasses}
+        \caption{The Artist class and many of its subclasses}\label{fig:artist}
 \end{figure}
 
 %S8--------------------------------------------------------------------------------------
 
 \subsection{Style}
 
-Style is a base class for all the styles. BoxStyle,  ConnectionStyle and ArrowStyle are subclasses of it. They are used to specify the location and size of the box to be drawn,  to create a path between two points, or to create an arrow path along a given path
+Style is a base class for all the styles. BoxStyle,  ConnectionStyle and ArrowStyle are subclasses of it. They are used to specify the location and size of the box to be drawn,  to create a path between two points, or to create an arrow path along a given path (see Figure~\ref{fig:style}).
 
 \begin{figure}[ht!]
         \centering
                 \includegraphics[width=0.5\textwidth]{img/umls/candy/style}
-        \caption{The Style class and many of its subclasses}
+        \caption{The Style class and many of its subclasses}\label{fig:style}
 \end{figure}
 
 \subsection{ScaleBase}
 
-ScaleBase: It is the base class for all scales. Scales are separable transformations, working on a single dimension. There are 3 different types of scale that can get transformed to. The default linear scale,  standard logarithmic scale and the symmetrical logarithmic scale
+ScaleBase: It is the base class for all scales. Scales are separable transformations, working on a single dimension. There are 3 different types of scale that can get transformed to. The default linear scale,  standard logarithmic scale and the symmetrical logarithmic scale(see Figure~\ref{fig:scale}).
 
 \begin{figure}[ht!]
         \centering
                 \includegraphics[width=0.5\textwidth]{img/umls/candy/Scale}
-        \caption{The ScaleBase class and many of its subclasses}
+        \caption{The ScaleBase class and many of its subclasses}\label{fig:scale}
 \end{figure}
 
 \subsection{RenderBase}
 
-The Renderer Base is an abstract base class to handle drawing or rendering operations.
+The Renderer Base is an abstract base class to handle drawing or rendering operations (see Figure~\ref{fig:render}).
 
 
 \begin{figure}[ht!]
         \centering
                 \includegraphics[width=0.5\textwidth]{img/umls/candy/Renderer}
-        \caption{The Renderer class and many of its subclasses}
+        \caption{The Renderer class and many of its subclasses}\label{fig:render}
 \end{figure}
 
 \subsection{Path}
 
-The class Path represents a series of possibly disconnected, possibly closed, line and curve segments. It has a subclass TextPath, which used to create a path from the text.
+The class Path represents a series of possibly disconnected, possibly closed, line and curve segments. It has a subclass TextPath, which used to create a path from the text (see Figure~\ref{fig:path}).
 
 
 \begin{figure}[ht!]
         \centering
                 \includegraphics[width=0.5\textwidth]{img/umls/candy/Path}
-        \caption{The Path class and many of its subclasses}
+        \caption{The Path class and many of its subclasses}\label{fig:path}
 \end{figure}
 
 \subsection{Widget}
 
-The class Widget is an abstract base class for GUI neutral widgets. It contains widgets that are designed to work for any of the GUI backends. AxesWidget, SubplotTool and MultiCursor are the subclasses of the class Widget.
+The class Widget is an abstract base class for GUI neutral widgets. It contains widgets that are designed to work for any of the GUI backends. AxesWidget, SubplotTool and MultiCursor are the subclasses of the class Widget (see Figure~\ref{fig:wd}).
 
 \begin{figure}[ht!]
         \centering
                 \includegraphics[width=0.5\textwidth]{img/umls/candy/Widget}
-        \caption{The Artist class and many of its subclasses}
+        \caption{The Artist class and many of its subclasses}\label{fig:wd}
 \end{figure}
 
 
