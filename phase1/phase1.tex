@@ -559,6 +559,58 @@ The Artist class is an abstract class that is used to implement classes which is
 
 %S8--------------------------------------------------------------------------------------
 
+\subsection{Style}
+
+Style is a base class for all the styles. BoxStyle,  ConnectionStyle and ArrowStyle are subclasses of it. They are used to specify the location and size of the box to be drawn,  to create a path between two points, or to create an arrow path along a given path
+
+\begin{figure}[ht!]
+        \centering
+                \includegraphics[width=0.5\textwidth]{img/umls/candy/style}
+        \caption{The Style class and many of its subclasses}
+\end{figure}
+
+\subsection{ScaleBase}
+
+ScaleBase: It is the base class for all scales. Scales are separable transformations, working on a single dimension. There are 3 different types of scale that can get transformed to. The default linear scale,  standard logarithmic scale and the symmetrical logarithmic scale
+
+\begin{figure}[ht!]
+        \centering
+                \includegraphics[width=0.5\textwidth]{img/umls/candy/Scale}
+        \caption{The ScaleBase class and many of its subclasses}
+\end{figure}
+
+\subsection{RenderBase}
+
+The Renderer Base is an abstract base class to handle drawing or rendering operations.
+
+
+\begin{figure}[ht!]
+        \centering
+                \includegraphics[width=0.5\textwidth]{img/umls/candy/Renderer}
+        \caption{The Renderer class and many of its subclasses}
+\end{figure}
+
+\subsection{Path}
+
+The class Path represents a series of possibly disconnected, possibly closed, line and curve segments. It has a subclass TextPath, which used to create a path from the text.
+
+
+\begin{figure}[ht!]
+        \centering
+                \includegraphics[width=0.5\textwidth]{img/umls/candy/Path}
+        \caption{The Path class and many of its subclasses}
+\end{figure}
+
+\subsection{Widget}
+
+The class Widget is an abstract base class for GUI neutral widgets. It contains widgets that are designed to work for any of the GUI backends. AxesWidget, SubplotTool and MultiCursor are the subclasses of the class Widget.
+
+\begin{figure}[ht!]
+        \centering
+                \includegraphics[width=0.5\textwidth]{img/umls/candy/Widget}
+        \caption{The Artist class and many of its subclasses}
+\end{figure}
+
 
 
 %----------------------------------------------------------------------------------------
