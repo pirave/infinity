@@ -485,6 +485,22 @@ FigureCanvasBase is the abstraction layer that separates the class matplotlib.fi
 \end{figure}
 
 %S4--------------------------------------------------------------------------------------
+\subsection{Axes}
+Transforms data into horizontally and vertically classed display coordinates (x,y).
+\begin{figure}[ht!]
+        \centering
+                \includegraphics[width=0.8\textwidth]{img/umls/josh/axis}
+        \caption{The Axis class and its subclasses}\label{fig:math text}
+\end{figure}
+
+\subsection{Image}
+Responsible for transforming, displaying, creating and retrieving images.
+\begin{figure}[ht!]
+        \centering
+                \includegraphics[width=0.8\textwidth]{img/umls/josh/img}
+        \caption{The AxesImageBase class and its subclasses}\label{fig:math text}
+\end{figure}
+
 
 %S5--------------------------------------------------------------------------------------
 \subsection{Mathtext}
@@ -527,8 +543,24 @@ Created by Composite Artists, Patches and its primitive artist subclasses create
 \begin{figure}[ht!]
         \centering
                 \includegraphics[width=\textwidth]{img/umls/derek/patch}
-        \caption{The Patch class and many of its subclasses}
+        \caption{The Patch class and many of its subclasses}\label{fig:artistExAgg}
 \end{figure}
+
+%S7--------------------------------------------------------------------------------------
+\subsection{Artist}
+
+The Artist class is an abstract class that is used to implement classes which is then used to display on the figureCanvas. These classes include Table, Line2D, Figure, Text, Legend etc?
+
+\begin{figure}[ht!]
+        \centering
+                \includegraphics[width=0.5\textwidth]{img/umls/dave/artist}
+        \caption{The Artist class and many of its subclasses}
+\end{figure}
+
+%S8--------------------------------------------------------------------------------------
+
+
+
 %----------------------------------------------------------------------------------------
 %xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 %xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
