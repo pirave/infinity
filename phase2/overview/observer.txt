@@ -1,2 +1,0 @@
-
-The button class is extended form AxesWidget which is a child class of the abstract class Widget. AxesWidget contains several children which include: Button, Slider, CheckButtons, RadioButtons, Cursor, RectangleSelector, LassoSelector and Lasso. They are all examples of observers, and Button is the one we'll discuss below.
