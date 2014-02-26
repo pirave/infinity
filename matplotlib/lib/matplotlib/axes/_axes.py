@@ -5586,11 +5586,12 @@ class Axes(_AxesBase):
                                                             m + bottom)
                 if log:
                     y[y < minimum] = minimum
-                if orientation == 'horizontal':
-                    x, y = y, x
 
                 xvals.append(x.copy())
                 yvals.append(y.copy())
+
+                if orientation == 'horizontal':
+                    xvals[-1], yvals[-1] = yvals[-1], xvals[-1]
 
             if fill:
                 # add patches in reverse order so that when stacking,
