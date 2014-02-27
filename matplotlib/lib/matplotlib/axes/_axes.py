@@ -2224,7 +2224,7 @@ class Axes(_AxesBase):
         self.hold(True)
 
         # Assume there's at least one data array
-        y = np.asarray(args[0], dtype=np.float)
+        y = np.asarray(args[0], dtype=None)
         args = args[1:]
 
         # Try a second one
