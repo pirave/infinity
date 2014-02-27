@@ -1537,7 +1537,20 @@ class Axis(artist.Artist):
 
         ACCEPTS: sequence of strings
         """
-        #ticklabels = [str(l) for l in ticklabels]
+        # if the user passed in get_ticklabels as the ticklabel argument
+        if isinstance(ticklabels, cbook.silent_list):
+            # first check is to check if the list is empty
+            # if the list is empty, then we don't update the ticklabels
+            # since set_ticklabels(get_ticklabels) would delete all the tick
+            # numbers, which is undesirable
+            empty = [True for _, o in enumerate(ticklabels) if o.get_text()]
+            # return False to indicate to the user that nothing has changed
+            if not empty:
+                return False
+
+            # else get the text
+            ticklabels = [o.get_text() for _,o in enumerate(ticklabels)]
+        
         minor = kwargs.pop('minor', False)
         if minor:
             self.set_minor_formatter(mticker.FixedFormatter(ticklabels))
