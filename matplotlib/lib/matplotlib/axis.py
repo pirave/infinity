@@ -1544,8 +1544,9 @@ class Axis(artist.Artist):
             # since set_ticklabels(get_ticklabels) would delete all the tick
             # numbers, which is undesirable
             empty = [True for _, o in enumerate(ticklabels) if o.get_text()]
+            # return False to indicate to the user that nothing has changed
             if not empty:
-                return
+                return False
 
             # else get the text
             ticklabels = [o.get_text() for _,o in enumerate(ticklabels)]
