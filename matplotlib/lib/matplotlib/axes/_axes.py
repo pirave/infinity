@@ -2590,14 +2590,14 @@ class Axes(_AxesBase):
                 xerr = [xerr] * len(x)
             # Ensure xerr is flattened in the case it is an N * 1 arraylike
             # Do not flatten if it is a 2 * N arraylike
-            elif not(len(xerr) == 2 and iterable(xerr[0]) 
+            elif not(len(xerr) == 2 and iterable(xerr[0])
                      and iterable(xerr[1])):
                 xerr = list(cbook.flatten(xerr))
 
         if yerr is not None:
             if not iterable(yerr):
                 yerr = [yerr] * len(y)
-            elif not (len(yerr) == 2 and iterable(yerr[0]) 
+            elif not (len(yerr) == 2 and iterable(yerr[0])
                       and iterable(yerr[1])):
                 yerr = list(cbook.flatten(yerr))
 
