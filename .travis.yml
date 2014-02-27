@@ -27,7 +27,7 @@ script:
   - cd ../tmp_test_dir
   # The number of processes is hardcoded, because using too many causes the
   # Travis VM to run out of memory (since so many copies of inkscape and
-  # ghostscript are running at the same time). 
+  # ghostscript are running at the same time).
   - echo Testing using 8 processes
   # Generate the font caches in a single process before starting the
   # multiple processes
