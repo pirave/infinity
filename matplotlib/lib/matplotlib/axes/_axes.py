@@ -2575,17 +2575,31 @@ class Axes(_AxesBase):
         # preserve units
         if not iterable(x):
             x = [x]
+        else:
+            # Ensure x is flattened in the case it is an N * 1 arraylike
+            # otherwise vlines will raise an exception
+            x = list(cbook.flatten(x))
 
         if not iterable(y):
             y = [y]
+        else:
+            y = list(cbook.flatten(y))
 
         if xerr is not None:
             if not iterable(xerr):
                 xerr = [xerr] * len(x)
+            # Ensure xerr is flattened in the case it is an N * 1 arraylike
+            # Do not flatten if it is a 2 * N arraylike
+            elif not(len(xerr) == 2 and iterable(xerr[0]) 
+                     and iterable(xerr[1])):
+                xerr = list(cbook.flatten(xerr))
 
         if yerr is not None:
             if not iterable(yerr):
                 yerr = [yerr] * len(y)
+            elif not (len(yerr) == 2 and iterable(yerr[0]) 
+                      and iterable(yerr[1])):
+                yerr = list(cbook.flatten(yerr))
 
         l0 = None
 
